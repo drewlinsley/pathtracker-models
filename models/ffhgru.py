@@ -269,6 +269,8 @@ class hConvGRUCell(nn.Module):
             gated_inhibition = inhibition
         else:
             gated_input = input_
+            gated_excitation = excitation  # att_gate * excitation
+            gated_inhibition = inhibition
 
         if not self.no_inh:
             # Compute inhibition
